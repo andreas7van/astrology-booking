@@ -12,6 +12,7 @@ const app = express();
 const stripe = Stripe('sk_test_51Pt9uHItak2RtXorixOAjZcy4IaZyyDKotrkuH3XElwJVVGxo9UGU6vcwJ09sBCZ5iEz7zm9qVyVP12AIq8JNCAZ00kHGvPtfF');
 const SECRET_KEY = 'o1Me3K9!rH%&!Zp9x^7$Y@u4S1'; // Ισχυρό μυστικό κλειδί για το JWT
 
+
 app.use(cors());
 app.use(bodyParser.json());
 
