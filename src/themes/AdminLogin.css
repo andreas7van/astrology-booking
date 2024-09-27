@@ -1,0 +1,131 @@
+/* Admin Login Container */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+.admin-login-container {
+    justify-content: center;
+    align-items: center;
+    background-color: #0d0d2b;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+/* Form Wrapper */
+.admin-login-form {
+    background-color: #16162e;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #444;
+    color: white;
+}
+
+/* Form Header */
+.admin-login-container h1 {
+text-align: center;
+    font-size: 1.8rem;
+    color: #f0d52d;
+    margin-bottom: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Input Fields */
+.admin-login-form .form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.admin-login-form input {
+    width: 100%;
+    padding: 0.9rem;
+    border: 2px solid #f0d52d;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #0d0d2b;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Input Focus Styles */
+.admin-login-form input:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+    outline: none;
+}
+
+/* Submit Button */
+.login-button {
+    background-color: #f0d52d;
+    color: #1f1f1f;
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover and Active States for Button */
+.login-button:hover {
+    background-color: #ffd700;
+    transform: translateY(-2px);
+}
+
+.login-button:active {
+    background-color: #f0c20d;
+    transform: translateY(0);
+}
+
+/* Error Message */
+.error-message {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .admin-login-form {
+        padding: 2rem;
+    }
+
+    .admin-login-container h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.forgot-password p {
+    color: #f0d52d;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.forgot-password p:hover {
+    color: #ffd700;
+}
+
+/* Error Message */
+.error-message {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+}

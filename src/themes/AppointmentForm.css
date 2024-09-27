@@ -1,0 +1,396 @@
+/* General Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.appointment-form {
+    background: rgba(10, 3, 46, 0.85); /* Σκούρο ημιδιαφανές φόντο */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px; /* Μείωση του πλάτους */
+    color: #fff;
+}
+
+.appointment-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px; /* Μείωση μεγέθους */
+    font-weight: bold;
+    color: #ffc107; /* Κίτρινο χρώμα */
+}
+
+.appointment-form .form-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Μείωση του κενών μεταξύ των πεδίων */
+    margin-top: 1rem;
+}
+
+.appointment-form .form-group label {
+    display: block;
+    margin-bottom: 5px; /* Μείωση του κενού κάτω από τις ετικέτες */
+    font-size: 12px; /* Μικρότερο μέγεθος γραμματοσειράς */
+    color: #fff;
+    text-transform: uppercase;
+    width: 48%; /* Μείωση του πλάτους των πεδίων */
+}
+
+.appointment-form input,
+.appointment-form .react-datepicker-wrapper input {
+    margin-top: 0.5rem;
+    padding: 12px; /* Αύξηση του padding για πιο άνετη εμφάνιση */
+    border-radius: 50px; /* Στρογγυλεμένες γωνίες */
+    font-size: 14px;
+    border: none;
+    background: #fff;
+    color: #333;
+    transition: all 0.3s ease; /* Ομαλή μετάβαση στο hover */
+}
+
+.appointment-form input:focus,
+.appointment-form .react-datepicker-wrapper input:focus {
+    border: 2px solid #ffc107; /* Highlight στο focus */
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+.appointment-form button {
+    background-color: #ffc107; /* Κίτρινο όπως το χρώμα του τίτλου */
+    color: #000;
+    padding: 8px 20px; /* Μικρότερο padding για το κουμπί */
+    border-radius: 30px; /* Στρογγυλεμένες γωνίες */
+    cursor: pointer;
+    font-size: 14px; /* Μικρότερο μέγεθος γραμματοσειράς */
+    width: auto; /* Μικρότερο πλάτος του κουμπιού */
+    text-transform: uppercase;
+    transition: all 0.7s ease;
+    margin-top: 15px;
+    line-height: 1.2;
+}
+
+.appointment-form button:hover {
+    background-color: #ffdd57; /* Ελαφρώς πιο φωτεινό κίτρινο στο hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.5);
+}
+
+.appointment-form button:active {
+    transform: scale(1);
+}
+
+#button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px; /* Μικρότερη γραμματοσειρά */
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: white;
+    width: 100%;
+    height: 50px; /* Μείωση του ύψους του wrapper */
+    position: relative;
+    overflow: visible;
+}
+
+.submit {
+    z-index: 2;
+    width: 100%;
+    height: 45px; /* Μείωση του ύψους του κουμπιού */
+    display: block;
+    border-radius: 50px; /* Στρογγυλεμένες γωνίες */
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    line-height: 2.2;
+    transition: all 0.7s ease;
+    position: relative;
+}
+
+.submit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.5);
+}
+
+.submit:active {
+    line-height: 2.5;
+    filter: brightness(0.95);
+}
+
+.loader {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 1;
+    background-color: #ffc107;
+}
+
+.checked .loader {
+    opacity: 1;
+    animation: loader-anim 2s ease-in-out;
+}
+
+.checked .submit {
+    width: 45px;
+    color: transparent;
+    background: linear-gradient(to right, #ff7b6e 0%, #ff7b6e 100%);
+    animation: submit-anim 4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.checked .check {
+    animation: check 4s ease forwards;
+}
+
+.required {
+    color: red; /* Κόκκινο αστεράκι για υποχρεωτικά πεδία */
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.required-field-note {
+    color: white;
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.appointment-form .react-datepicker-wrapper {
+    display: block;
+}
+
+.form-date, .form-time {
+    margin-top: 1rem;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: none;
+    background: #fff;
+    color: #333;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form-date:focus, .form-time:focus {
+    border: 2px solid #ffc107;
+    outline: none;
+}
+
+
+/* Adjust month dropdown in calendar */
+.react-datepicker__header select {
+    text-transform: lowercase;
+    font-size: 12px; /* Smaller font size for better readability */
+}
+
+/* Adjust current month text in the header of the calendar */
+.react-datepicker__current-month {
+    text-transform: lowercase;
+    font-size: 12px; /* Smaller font size for the header date */
+}
+
+/* Style for month and year dropdown */
+.react-datepicker__month-dropdown,
+.react-datepicker__year-dropdown {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ffc107;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Add hover effect */
+.react-datepicker__month-dropdown:hover,
+.react-datepicker__year-dropdown:hover {
+    background-color: #f0f0f0;
+}
+
+/* Style for making the year dropdown scrollable */
+.react-datepicker__year-dropdown {
+    max-height: 200px;
+    overflow-y: scroll; /* Enable scrolling for the year dropdown */
+    font-size: 12px; /* Smaller font size for the dropdown */
+}
+
+/* Adjust the selected year and month font size */
+.react-datepicker__year-option, .react-datepicker__month-option {
+    font-size: 14px;
+}
+
+/* Highlight the selected year or month when hovered */
+.react-datepicker__year-option:hover, .react-datepicker__month-option:hover {
+    background-color: #ffdd57;
+}
+
+/* Add smooth scroll effect for the dropdown */
+.react-datepicker__year-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.react-datepicker__year-dropdown::-webkit-scrollbar-thumb {
+    background-color: #ffc107;
+    border-radius: 10px;
+}
+
+.react-datepicker__year-dropdown::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+
+
+
+/* General Styling for Time Fields */
+.form-time {
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    background-color: #fff;
+    border: 2px solid #ccc; /* Default border */
+    border-radius: 50px; /* More rounded corners for better visual impact */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease;
+}
+
+/* Focus State Styling for Time Fields */
+.form-time:focus {
+    border: 2px solid #ffc107; /* Yellow border on focus to match the theme */
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5); /* Highlighted shadow on focus */
+}
+
+/* Hover State Styling for Time Fields */
+.form-time:hover {
+    border-color: #ffdd57; /* Lighter yellow border on hover */
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.3); /* Slight shadow on hover */
+}
+
+/* Adjust month dropdown in calendar */
+.react-datepicker__header select {
+    text-transform: lowercase;
+    font-size: 12px; /* Smaller font size for better readability */
+}
+
+/* Adjust current month text in the header of the calendar */
+.react-datepicker__current-month {
+    text-transform: lowercase;
+    font-size: 12px; /* Smaller font size for the header date */
+}
+
+/* Style for month and year dropdown */
+.react-datepicker__month-dropdown,
+.react-datepicker__year-dropdown {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ffc107;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Add hover effect */
+.react-datepicker__month-dropdown:hover,
+.react-datepicker__year-dropdown:hover {
+    background-color: #f0f0f0;
+}
+
+/* Style for making the year dropdown scrollable */
+.react-datepicker__year-dropdown {
+    max-height: 200px;
+    overflow-y: scroll; /* Enable scrolling for the year dropdown */
+    font-size: 12px; /* Smaller font size for the dropdown */
+}
+
+/* Adjust the selected year and month font size */
+.react-datepicker__year-option, .react-datepicker__month-option {
+    font-size: 14px;
+}
+
+/* Highlight the selected year or month when hovered */
+.react-datepicker__year-option:hover, .react-datepicker__month-option:hover {
+    background-color: #ffdd57;
+}
+
+/* Add smooth scroll effect for the dropdown */
+.react-datepicker__year-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.react-datepicker__year-dropdown::-webkit-scrollbar-thumb {
+    background-color: #ffc107;
+    border-radius: 10px;
+}
+
+.react-datepicker__year-dropdown::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+
+
+.appointment-form select {
+    margin-top: 0.5rem;
+    padding: 12px; /* Ίδιο padding όπως στα άλλα πεδία */
+    border-radius: 50px; /* Στρογγυλεμένες γωνίες για το select */
+    font-size: 14px; /* Ίδιο μέγεθος γραμματοσειράς */
+    border: none;
+    background: #fff;
+    color: #333;
+    width: 100%; /* Ίδιο πλάτος με τα input */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Προσθήκη σκιάς για βάθος */
+    transition: all 0.3s ease; /* Ομαλή μετάβαση στο hover */
+}
+
+.appointment-form select:focus {
+    border: 2px solid #ffc107; /* Highlight στο focus */
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+.appointment-form select:hover {
+    border-color: #ffdd57; /* Ελαφρώς πιο φωτεινό κίτρινο στο hover */
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.3); /* Ελαφρά σκιά στο hover */
+}
+
+/* Κλάση για διαθέσιμες ημερομηνίες */
+.available-date {
+    background-color: #28a745; /* Πράσινο για διαθέσιμες ημερομηνίες */
+    color: white;
+    border-radius: 50%;
+}
+
+/* Κλάση για μη διαθέσιμες ημερομηνίες */
+.unavailable-date {
+    background-color: #dc3545; /* Κόκκινο για μη διαθέσιμες ημερομηνίες */
+    color: white;
+    border-radius: 50%;
+}
+
+/* Στυλ για τις ημερομηνίες στον DatePicker */
+.react-datepicker__day--keyboard-selected {
+    background-color: #ffc107 !important; /* Κίτρινο για την επιλεγμένη ημέρα */
+    color: #fff !important;
+}
+
+.react-datepicker__day--today {
+    border: 2px solid #ffc107; /* Κίτρινο περίγραμμα για την σημερινή ημέρα */
+}

@@ -1,0 +1,118 @@
+/* General Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styles for Payment Form */
+.payment-form {
+    background: rgba(10, 3, 46, 0.9); /* Semi-transparent dark background */
+    padding: 40px;
+    border-radius: 30px; /* Πιο κυκλικές γωνίες για τη φόρμα */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    max-width: 500px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-in-out;
+    color: #fff;
+}
+
+.payment-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffc107; /* Yellow color */
+}
+
+.payment-form p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Make StripeElement fields more rounded */
+.payment-form .StripeElement {
+    padding: 15px;
+    border: 2px solid #ffc107; /* Highlight border */
+    border-radius: 25px; /* Πιο κυκλικές γωνίες για τα πεδία εισαγωγής */
+    background-color: #fff;
+    color: #333;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Highlight on focus */
+.payment-form .StripeElement--focus {
+    border-color: #ffdd57;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+/* Styles for the button */
+.payment-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    border-radius: 50px; /* Πλήρως κυκλικό κουμπί */
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.payment-form button:hover {
+    transform: scale(1.05);
+}
+
+.payment-form button:active {
+    transform: scale(1);
+}
+
+.payment-form button:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+/* Centering form elements */
+.payment-form .form-group {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+    gap: 15px;
+}
+
+.payment-form label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Add subtle hover effect on inputs */
+.payment-form .StripeElement:hover {
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.4);
+}
+
+/* Sections fade in/out */
+.payment-section {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}

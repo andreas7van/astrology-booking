@@ -1,0 +1,84 @@
+/* Basic styles for the container */
+.about-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+   
+}
+
+/* Styles for the content section */
+.about-us-content {
+    max-width: 700px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: center;
+    animation: fadeIn 1s ease-out; /* Animation for smooth appearance */
+}
+
+/* Heading styles */
+.about-us-content h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 1; /* Set initial opacity to visible */
+    animation: slideIn 1.5s ease forwards; /* Smooth sliding in effect */
+}
+
+/* Text styles */
+.about-us-content .about-us-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    opacity: 0;
+    animation: fadeInText 2s ease 1s forwards; /* Text fades in after the heading */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide-in animation for the heading */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Fade-in animation for the text */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .about-us-content h1 {
+        font-size: 28px;
+    }
+
+    .about-us-content .about-us-text {
+        font-size: 16px;
+    }
+}

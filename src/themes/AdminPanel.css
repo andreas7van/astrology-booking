@@ -1,0 +1,355 @@
+/* Εισαγωγή της γραμματοσειράς Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+/* General Admin Panel Styles */
+.admin-panel-container {
+    padding: 2.5rem;
+    width: 1000px;
+    height: 500px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    font-family: 'Poppins';
+}
+
+/* Header */
+.admin-panel-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #444;
+    margin-bottom: 2rem;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+/* Subheading */
+.admin-availability-section h2,
+.admin-appointments-section h2 {
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Availability Form Styles */
+.admin-availability-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #fafafa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.admin-availability-form label {
+    font-size: 1rem;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-weight: bold;
+}
+
+.admin-availability-form input,
+.admin-availability-form select {
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease;
+}
+
+.admin-availability-form input:focus,
+.admin-availability-form select:focus {
+    border-color: #7a57d1; /* Add focus effect */
+    outline: none;
+}
+
+/* Button Styles */
+.admin-add-button-container {
+    grid-column: span 2; /* Ensure the button spans both columns */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.admin-availability-form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #7a57d1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.admin-availability-form button:hover {
+    background-color: #5c42a1;
+    transform: scale(1.05);
+}
+
+.admin-availability-form button:active {
+    background-color: #4c3881;
+    transform: scale(1);
+}
+
+/* Available Dates/Times List */
+.admin-available-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.admin-available-list li {
+    background-color: #f4f4f9;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Appointments Section */
+.admin-appointments-section {
+    margin-top: 2rem;
+}
+
+.admin-appointments-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.admin-available-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.admin-available-list button {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.admin-available-list button:hover {
+    background-color: #ff1a1a;
+}
+
+.admin-appointments-list button:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+}
+
+.admin-appointments-list button:active {
+    background-color: #cc0000;
+    transform: scale(1);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .admin-availability-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* General Admin Panel Styles */
+.admin-panel-container {
+    padding: 2.5rem;
+    width: 1000px;
+    height: 800px; /* Αύξηση του ύψους του panel */
+    margin: 2rem auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    font-family: 'Poppins';
+    overflow-y: auto; /* Ενεργοποίηση scrollbar για το κύριο κουτί αν ξεπεραστεί το ύψος */
+}
+
+/* Scrollbar styling για το admin panel */
+.admin-panel-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.admin-panel-container::-webkit-scrollbar-thumb {
+    background-color: #7a57d1;
+    border-radius: 10px;
+}
+
+.admin-panel-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Availability List Scrollable */
+.admin-available-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1.5rem;
+    max-height: 300px; /* Αυξημένο ύψος για περισσότερες διαθεσιμότητες */
+    overflow-y: auto; /* Ενεργοποίηση scrollbar μόνο όταν χρειάζεται */
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+/* Scrollbar styling για τη λίστα διαθεσιμότητας */
+.admin-available-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.admin-available-list::-webkit-scrollbar-thumb {
+    background-color: #7a57d1;
+    border-radius: 10px;
+}
+
+.admin-available-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Appointments List Scrollable */
+.admin-appointments-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 300px; /* Αυξημένο ύψος για τη λίστα ραντεβού */
+    overflow-y: auto; /* Scrollbar όταν τα στοιχεία υπερβαίνουν το ύψος */
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    margin-top: 1.5rem;
+}
+
+/* Scrollbar styling για τη λίστα ραντεβού */
+.admin-appointments-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.admin-appointments-list::-webkit-scrollbar-thumb {
+    background-color: #7a57d1;
+    border-radius: 10px;
+}
+
+.admin-appointments-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Scrollable Content Adjustment */
+.appointment-details {
+    max-height: 200px; /* Αύξηση του ύψους για τις λεπτομέρειες των ραντεβού */
+    overflow-y: auto;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+    margin-top: 1rem;
+}
+
+/* Scrollbar styling για τις λεπτομέρειες των ραντεβού */
+.appointment-details::-webkit-scrollbar {
+    width: 6px;
+}
+
+.appointment-details::-webkit-scrollbar-thumb {
+    background-color: #7a57d1;
+    border-radius: 10px;
+}
+
+.appointment-details::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.logout-button {
+    padding: 8px 16px;
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #e60000;
+}
+
+.logout-icon {
+    height: 20px;
+    
+    filter: invert(100%); /* Μετατρέπει την εικόνα σε λευκή */
+}
+
+.newsletter-section {
+    
+    bottom: 20px;
+    right: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-form1 label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.newsletter-form1 input , .newsletter-form1 textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.newsletter-form1 button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsletter-form1 button:hover {
+    background-color: #45a049;
+}
+
+.logout-button {
+    display: flex;
+    align-items: center; /* Κάνει ευθυγράμμιση στη μέση κατακόρυφα */
+    background-color: #ff4d4d; /* Χρώμα κουμπιού */
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px; /* Προσθέτει χώρο ανάμεσα στο εικονίδιο και το κείμενο */
+}

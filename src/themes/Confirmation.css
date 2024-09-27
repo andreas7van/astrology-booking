@@ -1,0 +1,83 @@
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.confirmation-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8f5;
+    text-align: center;
+    padding: 40px;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-in-out;
+    font-family: 'Poppins', sans-serif; /* Add new font */
+   
+}
+
+.confirmation-page h1 {
+    color: #2c8d6c;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.confirmation-page p {
+    color: #444;
+    font-size: 18px;
+    margin: 10px 0;
+    max-width: 600px;
+}
+
+.confirmation-page p:last-child {
+    margin-bottom: 20px;
+}
+
+.confirmation-page .checkmark-container {
+    margin-bottom: 20px;
+}
+
+.confirmation-page button {
+    background-color: #2c8d6c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.confirmation-page button:hover {
+    background-color: #247c5b;
+}
+
+.checkmark-container img {
+    width: 120px;
+    height: 120px;
+}
+
+@media (max-width: 768px) {
+    .confirmation-page h1 {
+        font-size: 28px;
+    }
+    .confirmation-page p {
+        font-size: 16px;
+    }
+    .checkmark-container img {
+        width: 100px;
+        height: 100px;
+    }
+}

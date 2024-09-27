@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap'); /* Εισαγωγή της γραμματοσειράς Poppins */
+
+.home-container {
+    display: flex;
+    justify-content: flex-start; /* Τοποθέτηση του κειμένου τέρμα αριστερά */
+    align-items: center;
+    height: 100vh;
+    background-image: url('../images/horoscope.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0 10%; /* Προσθήκη κενών στις πλευρές για καλύτερη αναγνωσιμότητα */
+    font-family: 'Poppins', sans-serif; /* Χρήση της γραμματοσειράς Poppins */
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.9); /* Πιο φωτεινό λευκό κουτί */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    
+}
+
+.home-content h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.home-content p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+
+.book-appointment-button {
+    display: inline-block; /* Το κουμπί γίνεται inline-block για να μπορεί να κεντραριστεί */
+    background-color:  #ffc107;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    margin: 0 auto; /* Κεντράρισμα με βάση το margin */
+    text-align: center; /* Κεντράρισμα του κειμένου μέσα στο κουμπί */
+}
+
+.book-appointment-button:hover {
+    background-color: #ff6347;
+    transform: scale(1.05); /* Ελαφριά αύξηση του μεγέθους στο hover */
+}

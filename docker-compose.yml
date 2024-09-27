@@ -1,0 +1,34 @@
+version: '3'
+services:
+  frontend:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: yarn start
+
+  backend:
+    build:
+      context: .  # Βεβαιώσου ότι το Dockerfile είναι στη ρίζα του project
+    ports:
+      - "3001:3001"  # Εξασφάλισε ότι η θύρα του backend είναι 3001
+    volumes:
+      - ./src:/app/src  # Συνδέουμε το φάκελο src στο /app/src μέσα στο container
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: node /app/src/Server.js  # Εκτέλεση του σωστού αρχείου
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

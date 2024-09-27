@@ -1,13 +1,54 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/horoscope.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Makes the background stay fixed while scrolling */
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+
+:root {
+  min-height: 100vh;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+
+  line-height: 1.2rem;
+  font-weight: 400;
+  /* background-image: radial-gradient(ellipse at top left, #7f50e4, #4c05d0); */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+body {
+  margin: 0;
+  text-align: center;
+  color: #b6b4ba;
+}
+*/
+
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#450d65, rgb(27, 18, 98));
+  border-radius: 10px; /* Αυξάνουμε το border-radius για πιο κυλινδρικό σχήμα */
+}
+
+::-webkit-scrollbar {
+  width: 0.7rem;
+  border-radius: 10px; /* Κυλινδρική μπάρα κύλισης */
 }
