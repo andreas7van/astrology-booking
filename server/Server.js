@@ -10,14 +10,14 @@ const mongoose = require('mongoose');
 const crypto = require('crypto');
 
 const app = express();
-const stripe = Stripe('sk_test_51Pt9uHItak2RtXorixOAjZcy4IaZyyDKotrkuH3XElwJVVGxo9UGU6vcwJ09sBCZ5iEz7zm9qVyVP12AIq8JNCAZ00kHGvPtfF');
-const SECRET_KEY = 'o1Me3K9!rH%&!Zp9x^7$Y@u4S1'; // Ισχυρό μυστικό κλειδί για το JWT
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);  // Χρησιμοποίησε την env μεταβλητή
+const SECRET_KEY = process.env.SECRET_KEY;  // Ισχυρό μυστικό κλειδί για το JWT
 
 
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/appointmentsdb')
+mongoose.connect(process.env.MONGODB_URI)  // Χρησιμοποίησε την env μεταβλητή
     .then(() => console.log('MongoDB connected successfully'))
     .catch((err) => console.log('MongoDB connection error:', err));
 
@@ -144,12 +144,12 @@ app.get('/admin/test-token', authenticateToken, (req, res) => {
 });
 
 
-// Setup Nodemailer for sending email notifications
+// Ρυθμίσεις για Nodemailer
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'partouzanfc2022@gmail.com', // Το email σου
-        pass: 'xsya mbbi gxjt leld'   // Χρησιμοποίησε τον κωδικό πρόσβασης εφαρμογής
+        user: process.env.EMAIL_USER,  // Χρησιμοποίησε την env μεταβλητή
+        pass: process.env.EMAIL_PASS   // Χρησιμοποίησε την env μεταβλητή
     }
 });
 
@@ -561,8 +561,8 @@ app.delete('/admin/availability/:id', async (req, res) => {
 });
 
 
+const PORT = process.env.PORT || 3001;  // Χρησιμοποίησε την περιβαλλοντική μεταβλητή PORT ή προεπιλογή την 3001
 
-// Ξεκινάμε τον διακομιστή στη θύρα 3001
-app.listen(3001, () => {
-    console.log('Ο διακομιστής τρέχει στη θύρα 3001');
+app.listen(PORT, () => {
+    console.log(`Ο διακομιστής τρέχει στη θύρα ${PORT}`);
 });
