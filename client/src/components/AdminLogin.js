@@ -23,7 +23,7 @@ const AdminLogin = () => {
         e.preventDefault();
     
         try {
-            const response = await fetch('http://localhost:3001/admin/login', {
+            const response = await fetch('https://astrology-booking-1.onrender.com/admin/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
