@@ -120,24 +120,34 @@ app.post('/admin/login', async (req, res) => {
     const { username, password } = req.body;
 
     try {
+        console.log('Received login request:', { username, password });  // Εκτύπωση των εισερχόμενων δεδομένων
+
         const admin = await Admin.findOne({ username });
+        console.log('Admin found in database:', admin);  // Εκτύπωση του admin που βρέθηκε στη βάση
+
         if (!admin) {
-            return res.status(401).json({ message: 'Λάθος όνομα χρήστη ή κωδικ1ός' });
+            console.log('Admin not found with username:', username);  // Log αν ο admin δεν βρέθηκε
+            return res.status(401).json({ message: 'Λάθος όνομα χρήστη ή κωδικός' });
         }
 
         const passwordMatch = await bcrypt.compare(password, admin.passwordHash);
         console.log('Password match:', passwordMatch);  // Εκτύπωση για να δεις αν το password ταιριάζει
+
         if (!passwordMatch) {
+            console.log('Password mismatch for user:', username);  // Log αν ο κωδικός δεν ταιριάζει
             return res.status(401).json({ message: 'Λάθος όνομα χρήστη ή κωδικός' });
         }
 
         const token = generateToken(username);
+        console.log('Generated JWT token:', token);  // Εκτύπωση του δημιουργημένου token
+
         res.json({ token, message: 'Επιτυχής σύνδεση' });
     } catch (error) {
-        console.error('Error during admin login:', error);
+        console.error('Error during admin login:', error);  // Log για τυχόν σφάλματα
         res.status(500).json({ message: 'Σφάλμα διακομιστή' });
     }
 });
+
 
 app.get('/admin/test-token', authenticateToken, (req, res) => {
     res.json({ message: 'Το token είναι έγκυρο!', user: req.user });
