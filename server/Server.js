@@ -11,7 +11,7 @@ const crypto = require('crypto');
 
 const app = express();
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);  // Χρησιμοποίησε την env μεταβλητή
-const SECRET_KEY = process.env.SECRET_KEY;  // Ισχυρό μυστικό κλειδί για το JWT
+const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;  // Ισχυρό μυστικό κλειδί για το JWT
 
 
 app.use(cors());
